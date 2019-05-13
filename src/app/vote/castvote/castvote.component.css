@@ -1,0 +1,11 @@
+html, body, section {
+    height: 100vh;
+}
+.vote-button {
+    margin: 10px;
+}
+
+.lg-size {
+    height: 600px;
+    width: 600px;
+}

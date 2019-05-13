@@ -1,0 +1,23 @@
+<section class="section-size">
+  <div>
+    <button 
+    mat-raised-button
+    (click)="displayBar()"
+    >Bar Graph</button>
+    <button 
+    mat-raised-button
+    (click)="displayPie()"
+    >Pie Graph</button>
+    <button 
+    mat-raised-button
+    (click)="displayDoughnut()"
+    >Doughnut Graph</button>
+  </div>
+  <canvas 
+  baseChart 
+  [datasets]="barChartData"
+  [labels]="barChartLabels"
+  [options]="barChartOptions"
+  [legend]="barChartLegend"
+  [chartType]="barChartType"></canvas>
+</section>

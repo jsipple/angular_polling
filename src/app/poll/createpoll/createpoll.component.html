@@ -1,0 +1,41 @@
+<section id="signup-section">
+  <mat-card>
+    <form 
+    [formGroup]="createPollForm"
+    fxLayout="column"
+    fxLayoutGap="10px"
+    fxLayoutAlign="center center"
+    (ngSubmit)="onSubmit()"
+    >
+      <mat-form-field>
+        <input 
+        type="text" 
+        matInput placeholder="Your Question"
+        formControlName="question">
+      </mat-form-field>
+      <mat-form-field
+      formArrayName="options"
+      *ngFor="let option of getControls(); let i = index;">
+        <div [formGroupName]="i">
+        <input 
+        type="text" 
+        matInput placeholder="Option {{i}}"
+        formControlName="option">
+        <mat-hint>Enter up to 10 options</mat-hint>
+      </div>
+      </mat-form-field>
+      <div 
+      fxLayout="row"
+      fxLayoutGap="10px">
+        <button 
+        mat-raised-button color="primary"
+        [disabled]="!createPollForm.valid">Create Poll</button>
+        <button 
+        mat-raised-button color="primary"
+        (click)="addOptions()"
+        [disabled]="!createPollForm.valid">Add Option</button>
+      </div>
+    </form>
+  </mat-card>   
+  
+</section>
